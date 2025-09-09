@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Трейдинг Чеклист</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h2>📋 Търговски Чеклист</h2>
+
+  <div id="checklist">
+    <div class="question">RSI показва прекупеност (>85)? <input type="checkbox" class="yes"></div>
+    <div class="question">MACD показва обръщане? <input type="checkbox" class="yes"></div>
+    <div class="question">Цена над Bollinger UB с отхвърляне? <input type="checkbox" class="yes"></div>
+    <div class="question">Потвърждение от 2 времеви интервала? <input type="checkbox" class="yes"></div>
+    <div class="question">Има ясно ниво на съпротива/подкрепа? <input type="checkbox" class="yes"></div>
+    <div class="question">Обемът подкрепя движението? <input type="checkbox" class="yes"></div>
+    <div class="question">Зададен стоп-лос? <input type="checkbox" class="yes"></div>
+    <div class="question">Сделката не надвишава 2% от капитала? <input type="checkbox" class="yes"></div>
+  </div>
+
+  <button onclick="calculate()">🔍 Изчисли</button>
+
+  <div class="result" id="output"></div>
+  <div class="bar-container">
+    <div class="bar" id="progressBar">0%</div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log("✅ Service Worker регистриран"));
+    }
+  </script>
+</body>
+</html>
